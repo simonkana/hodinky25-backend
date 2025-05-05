@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: hodinky25-backend
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:mysql://localhost:3306/hodinky25
+    username: root
+    password: ''
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+server:
+  port: 8080
+
+jwt:
+  secret: 91Ba728cN1Hn7gORPcFnfoqT2TZvn-0USXiqPhWsSUhc-IKftkAdrqQJGQcMPsLBq1EjOvFq7Ziw1L_l1DAcIg
+
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
