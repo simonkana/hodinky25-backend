@@ -1,10 +1,13 @@
 package cz.hodinky25.backend.service;
 
+import cz.hodinky25.backend.model.Token;
 import cz.hodinky25.backend.model.User;
+import cz.hodinky25.backend.repository.TokenRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -13,11 +16,14 @@ import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.function.Function;
 
+@RequiredArgsConstructor
 @Service
 public class JwtService {
 
     @Value("${jwt.secret}")
     private String secretKey;
+
+    private final TokenRepository tokenRepository;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -25,7 +31,10 @@ public class JwtService {
 
     public boolean isValid(String token, UserDetails user) {
         String username = extractUsername(token);
-        return (username.equals(user.getUsername())) && !isTokenExpired(token);
+
+        boolean isActiveToken = tokenRepository.findByToken(token).map(Token::isActive).orElse(false);
+
+        return (username.equals(user.getUsername())) && !isTokenExpired(token) && isActiveToken;
     }
 
     private boolean isTokenExpired(String token) {
