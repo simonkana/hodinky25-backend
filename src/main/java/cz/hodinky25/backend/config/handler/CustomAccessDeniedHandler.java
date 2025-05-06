@@ -1,4 +1,4 @@
-package cz.hodinky25.backend.config;
+package cz.hodinky25.backend.config.handler;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

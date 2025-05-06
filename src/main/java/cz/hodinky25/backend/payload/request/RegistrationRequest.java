@@ -1,24 +1,12 @@
 package cz.hodinky25.backend.payload.request;
 
-import cz.hodinky25.backend.model.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
 
-@Data
-public class RegistrationRequest {
-
-    @NotBlank(message = "Username is required")
-    private String username;
-
-    @NotBlank(message = "Email is required")
-    @Email(message = "Invalid email format")
-    private String email;
-
-    @NotBlank(message = "Password is required")
-    @Size(min = 6, message = "Password must be at least 6 characters long")
-    private String password;
-
-    private Role role; // TODO: remove role setting from DTO
+public record RegistrationRequest(
+        @NotBlank(message = "Username is required") String username,
+        @NotBlank(message = "Email is required") @Email(message = "Invalid email format") String email,
+        @NotBlank(message = "Password is required") @Size(min = 6, message = "Password must be at least 6 characters long") String password
+) {
 }

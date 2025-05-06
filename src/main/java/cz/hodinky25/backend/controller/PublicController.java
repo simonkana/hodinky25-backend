@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/public")
+@RequestMapping("/api/v1/public")
 public class PublicController {
 
     @GetMapping("/ping")

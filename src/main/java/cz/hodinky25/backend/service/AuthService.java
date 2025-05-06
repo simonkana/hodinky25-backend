@@ -4,7 +4,7 @@ import cz.hodinky25.backend.exception.ResourceAlreadyExistsException;
 import cz.hodinky25.backend.model.Role;
 import cz.hodinky25.backend.model.Token;
 import cz.hodinky25.backend.model.User;
-import cz.hodinky25.backend.payload.request.AuthRequest;
+import cz.hodinky25.backend.payload.request.LoginRequest;
 import cz.hodinky25.backend.payload.request.RegistrationRequest;
 import cz.hodinky25.backend.payload.response.AuthResponse;
 import cz.hodinky25.backend.repository.TokenRepository;
@@ -30,19 +30,19 @@ public class AuthService {
 
     public String register(RegistrationRequest request) {
 
-        if (userRepository.existsByUsername(request.getUsername())) {
+        if (userRepository.existsByUsername(request.username())) {
             throw new ResourceAlreadyExistsException("User with this username already exists");
         }
 
-        if (userRepository.existsByEmail(request.getEmail())) {
+        if (userRepository.existsByEmail(request.email())) {
             throw new ResourceAlreadyExistsException("User with this email already exists");
         }
 
         User user = User.builder()
-                .username(request.getUsername())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .role(request.getRole() != null ? request.getRole() : Role.USER)
+                .username(request.username())
+                .email(request.email())
+                .password(passwordEncoder.encode(request.password()))
+                .role(Role.USER)
                 .build();
 
         userRepository.save(user);
@@ -50,16 +50,16 @@ public class AuthService {
         return "User was successfully registered. Please log in.";
     }
 
-    public AuthResponse authenticate(AuthRequest request) {
+    public AuthResponse login(LoginRequest request) {
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getUsername(),
-                        request.getPassword()
+                        request.username(),
+                        request.password()
                 )
         );
 
-        User user = userRepository.findByUsername(request.getUsername()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        User user = userRepository.findByUsername(request.username()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         String authToken = jwtService.generateToken(user);
 

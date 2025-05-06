@@ -1,6 +1,6 @@
 package cz.hodinky25.backend.controller;
 
-import cz.hodinky25.backend.payload.request.AuthRequest;
+import cz.hodinky25.backend.payload.request.LoginRequest;
 import cz.hodinky25.backend.payload.request.RegistrationRequest;
 import cz.hodinky25.backend.payload.response.AuthResponse;
 import cz.hodinky25.backend.service.AuthService;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthController {
 
     private final AuthService authService;
@@ -27,7 +27,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> authenticate(@Valid @RequestBody AuthRequest request) {
-        return ResponseEntity.ok(authService.authenticate(request));
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
+        return ResponseEntity.ok(authService.login(request));
     }
 }

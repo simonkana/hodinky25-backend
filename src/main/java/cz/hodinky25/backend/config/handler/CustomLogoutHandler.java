@@ -1,4 +1,4 @@
-package cz.hodinky25.backend.config;
+package cz.hodinky25.backend.config.handler;
 
 import cz.hodinky25.backend.model.Token;
 import cz.hodinky25.backend.repository.TokenRepository;

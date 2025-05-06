@@ -12,9 +12,9 @@ public class LoggerConfig {
         CommonsRequestLoggingFilter loggingFilter = new CommonsRequestLoggingFilter();
         loggingFilter.setIncludeClientInfo(true);
         loggingFilter.setIncludeQueryString(true);
-        loggingFilter.setIncludePayload(true);       // tělo requestu
-        loggingFilter.setMaxPayloadLength(10000);    // max. délka těla
-        loggingFilter.setIncludeHeaders(false);      // nastav true, pokud chceš i hlavičky
+        loggingFilter.setIncludePayload(true);
+        loggingFilter.setMaxPayloadLength(10000);
+        loggingFilter.setIncludeHeaders(false);
         return loggingFilter;
     }
 }

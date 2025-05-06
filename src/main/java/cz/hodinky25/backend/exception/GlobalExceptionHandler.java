@@ -10,7 +10,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.nio.file.AccessDeniedException;
 import java.time.LocalDateTime;
@@ -28,7 +27,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<Object> handleBadCredentials(BadCredentialsException ex, WebRequest request) {
-        return buildResponse(HttpStatus.BAD_REQUEST, ex.getMessage(), request);
+        return buildResponse(HttpStatus.BAD_REQUEST, "Invalid credentials", request);
     }
 
     @ExceptionHandler(AccessDeniedException.class)
@@ -44,11 +43,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<Object> handleMethodNotSupported(HttpRequestMethodNotSupportedException ex, WebRequest request) {
         return buildResponse(HttpStatus.METHOD_NOT_ALLOWED, ex.getMessage(), request);
-    }
-
-    @ExceptionHandler(NoHandlerFoundException.class)
-    public ResponseEntity<Object> handleNotFound(NoHandlerFoundException ex, WebRequest request) {
-        return buildResponse(HttpStatus.NOT_FOUND, ex.getMessage(), request);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
