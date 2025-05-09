@@ -12,14 +12,17 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
-    @Value("${client.url}")
-    private String clientUrl;
+    @Value("${client.next-js-dev-url}")
+    private String nextJsDevUrl;
+
+    @Value("${client.vite-dev-url}")
+    private String viteDevUrl;
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowedOrigins(List.of(clientUrl)); // "*"
+        config.setAllowedOrigins(List.of(nextJsDevUrl, viteDevUrl)); // "*"
         config.setAllowedMethods(List.of("*"));
         config.setAllowedHeaders(List.of("*"));
 

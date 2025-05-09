@@ -29,4 +29,5 @@ logging:
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
 
 client:
-  url: http://localhost:3000
+  next-js-dev-url: http://localhost:3000
+  vite-dev-url: http://localhost:5173
