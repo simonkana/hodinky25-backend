@@ -1,10 +1,10 @@
 package cz.hodinky25.backend.controller;
 
-import cz.hodinky25.backend.mapper.UserMapper;
-import cz.hodinky25.backend.model.User;
-import cz.hodinky25.backend.payload.response.UserResponse;
-import cz.hodinky25.backend.security.CurrentUser;
-import cz.hodinky25.backend.service.UserService;
+import cz.hodinky25.backend.security.annotation.CurrentUser;
+import cz.hodinky25.backend.user.mapper.UserMapper;
+import cz.hodinky25.backend.user.model.User;
+import cz.hodinky25.backend.user.payload.UserResponse;
+import cz.hodinky25.backend.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

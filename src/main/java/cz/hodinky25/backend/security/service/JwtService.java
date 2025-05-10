@@ -1,8 +1,8 @@
-package cz.hodinky25.backend.service;
+package cz.hodinky25.backend.security.service;
 
-import cz.hodinky25.backend.model.Token;
-import cz.hodinky25.backend.model.User;
-import cz.hodinky25.backend.repository.TokenRepository;
+import cz.hodinky25.backend.security.model.Token;
+import cz.hodinky25.backend.security.repository.TokenRepository;
+import cz.hodinky25.backend.user.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

@@ -1,4 +1,4 @@
-package cz.hodinky25.backend.security;
+package cz.hodinky25.backend.security.annotation;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 

@@ -1,5 +1,6 @@
-package cz.hodinky25.backend.model;
+package cz.hodinky25.backend.user.model;
 
+import cz.hodinky25.backend.security.model.Token;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

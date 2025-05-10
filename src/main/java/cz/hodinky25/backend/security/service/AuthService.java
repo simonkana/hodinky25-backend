@@ -1,14 +1,14 @@
-package cz.hodinky25.backend.service;
+package cz.hodinky25.backend.security.service;
 
 import cz.hodinky25.backend.exception.ResourceAlreadyExistsException;
-import cz.hodinky25.backend.model.Role;
-import cz.hodinky25.backend.model.Token;
-import cz.hodinky25.backend.model.User;
-import cz.hodinky25.backend.payload.request.LoginRequest;
-import cz.hodinky25.backend.payload.request.RegistrationRequest;
-import cz.hodinky25.backend.payload.response.AuthResponse;
-import cz.hodinky25.backend.repository.TokenRepository;
-import cz.hodinky25.backend.repository.UserRepository;
+import cz.hodinky25.backend.security.model.Token;
+import cz.hodinky25.backend.security.payload.AuthResponse;
+import cz.hodinky25.backend.security.payload.LoginRequest;
+import cz.hodinky25.backend.security.payload.RegistrationRequest;
+import cz.hodinky25.backend.security.repository.TokenRepository;
+import cz.hodinky25.backend.user.model.Role;
+import cz.hodinky25.backend.user.model.User;
+import cz.hodinky25.backend.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

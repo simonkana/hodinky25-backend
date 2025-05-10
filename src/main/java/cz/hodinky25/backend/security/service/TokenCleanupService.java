@@ -1,6 +1,6 @@
-package cz.hodinky25.backend.service;
+package cz.hodinky25.backend.security.service;
 
-import cz.hodinky25.backend.repository.TokenRepository;
+import cz.hodinky25.backend.security.repository.TokenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;

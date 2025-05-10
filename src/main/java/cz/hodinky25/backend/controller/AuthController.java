@@ -1,9 +1,9 @@
 package cz.hodinky25.backend.controller;
 
-import cz.hodinky25.backend.payload.request.LoginRequest;
-import cz.hodinky25.backend.payload.request.RegistrationRequest;
-import cz.hodinky25.backend.payload.response.AuthResponse;
-import cz.hodinky25.backend.service.AuthService;
+import cz.hodinky25.backend.security.payload.AuthResponse;
+import cz.hodinky25.backend.security.payload.LoginRequest;
+import cz.hodinky25.backend.security.payload.RegistrationRequest;
+import cz.hodinky25.backend.security.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

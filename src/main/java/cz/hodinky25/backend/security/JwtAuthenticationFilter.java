@@ -1,7 +1,7 @@
 package cz.hodinky25.backend.security;
 
-import cz.hodinky25.backend.service.JwtService;
-import cz.hodinky25.backend.service.UserDetailsServiceImpl;
+import cz.hodinky25.backend.security.service.JwtService;
+import cz.hodinky25.backend.user.service.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

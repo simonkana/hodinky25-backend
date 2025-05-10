@@ -1,4 +1,4 @@
-package cz.hodinky25.backend.payload.response;
+package cz.hodinky25.backend.user.payload;
 
 public record UserResponse(
         Long id,

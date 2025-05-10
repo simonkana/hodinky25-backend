@@ -3,7 +3,7 @@ package cz.hodinky25.backend.config;
 import cz.hodinky25.backend.config.handler.CustomAccessDeniedHandler;
 import cz.hodinky25.backend.config.handler.CustomLogoutHandler;
 import cz.hodinky25.backend.security.JwtAuthenticationFilter;
-import cz.hodinky25.backend.service.UserDetailsServiceImpl;
+import cz.hodinky25.backend.user.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

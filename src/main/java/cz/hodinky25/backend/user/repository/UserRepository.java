@@ -1,6 +1,6 @@
-package cz.hodinky25.backend.repository;
+package cz.hodinky25.backend.user.repository;
 
-import cz.hodinky25.backend.model.User;
+import cz.hodinky25.backend.user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

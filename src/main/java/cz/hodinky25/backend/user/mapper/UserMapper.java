@@ -1,7 +1,7 @@
-package cz.hodinky25.backend.mapper;
+package cz.hodinky25.backend.user.mapper;
 
-import cz.hodinky25.backend.model.User;
-import cz.hodinky25.backend.payload.response.UserResponse;
+import cz.hodinky25.backend.user.model.User;
+import cz.hodinky25.backend.user.payload.UserResponse;
 
 public class UserMapper {
 

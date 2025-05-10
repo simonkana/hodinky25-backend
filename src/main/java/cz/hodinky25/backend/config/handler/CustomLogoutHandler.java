@@ -1,7 +1,7 @@
 package cz.hodinky25.backend.config.handler;
 
-import cz.hodinky25.backend.model.Token;
-import cz.hodinky25.backend.repository.TokenRepository;
+import cz.hodinky25.backend.security.model.Token;
+import cz.hodinky25.backend.security.repository.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

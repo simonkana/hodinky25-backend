@@ -1,4 +1,4 @@
-package cz.hodinky25.backend.payload.request;
+package cz.hodinky25.backend.security.payload;
 
 import jakarta.validation.constraints.NotBlank;
 
